@@ -388,16 +388,14 @@
         window.tetris = gameInstance;
 
         // Wire up game events
-        gameInstance.on(ClassicTetris.SCORE_CHANGE, (data) => {
-          if (data.newScore > sessionHighScore) {
-            sessionHighScore = data.newScore;
-            updateHighScoreDisplay(sessionHighScore);
-          }
-        });
-
         gameInstance.on(ClassicTetris.GAME_OVER_END, (data) => {
           if (!gameOverShown) {
             gameOverShown = true;
+            // Update high score only at game over
+            if (data.score > sessionHighScore) {
+              sessionHighScore = data.score;
+              updateHighScoreDisplay(sessionHighScore);
+            }
             showGameOverModal(data);
           }
         });
