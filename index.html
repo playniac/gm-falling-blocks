@@ -389,8 +389,10 @@
 
         // Wire up game events
         gameInstance.on(ClassicTetris.SCORE_CHANGE, (data) => {
+          console.log('Score changed:', data.score, 'High score:', sessionHighScore);
           if (data.score > sessionHighScore) {
             sessionHighScore = data.score;
+            console.log('New high score:', sessionHighScore);
             updateHighScoreDisplay(sessionHighScore);
           }
         });
@@ -419,7 +421,12 @@
     }
 
     function updateHighScoreDisplay(score) {
-      highScoreDisplay.textContent = score;
+      if (highScoreDisplay) {
+        highScoreDisplay.textContent = score;
+        console.log('High score updated to:', score);
+      } else {
+        console.error('High score display element not found');
+      }
     }
 
     function updatePauseButton() {
