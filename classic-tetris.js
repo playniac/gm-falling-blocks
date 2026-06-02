@@ -1224,7 +1224,7 @@ class ClassicTetris {
   }
   
   _processBurn() {
-    if ((this.frameCounter % 8) === 0) {  //4) === 0) {
+    if ((this.frameCounter % 4) === 0) {
       ++this.columnsCleared;
       if (this.columnsCleared < 5) {
         // remove another columns of squares
@@ -1361,7 +1361,7 @@ class ClassicTetris {
   }
   
   _processGameOver() {
-    if ((this.frameCounter % 8) === 0) {  //4) === 0) {
+    if ((this.frameCounter % 4) === 0) {
       ++this.gameOverLine;
       if (this.gameOverLine < this.boardHeight) {
         // paint next row
