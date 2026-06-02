@@ -389,9 +389,9 @@
 
         // Wire up game events
         gameInstance.on(ClassicTetris.SCORE_CHANGE, (data) => {
-          console.log('Score changed:', data.score, 'High score:', sessionHighScore);
-          if (data.score > sessionHighScore) {
-            sessionHighScore = data.score;
+          console.log('Score changed:', data.newScore, 'High score:', sessionHighScore);
+          if (data.newScore > sessionHighScore) {
+            sessionHighScore = data.newScore;
             console.log('New high score:', sessionHighScore);
             updateHighScoreDisplay(sessionHighScore);
           }
