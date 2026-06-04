@@ -691,7 +691,6 @@ class ClassicTetris {
     document.addEventListener('pointermove', this._handlePointerMove, { capture: true, passive: false });
     document.addEventListener('pointerup', this._handlePointerUp, { capture: true, passive: false });
     document.addEventListener('pointercancel', this._handlePointerCancel, { capture: true, passive: false });
-    document.addEventListener('wheel', this._handleWheel, { capture: true, passive: false });
     document.addEventListener('keydown', this._handleKeyDown, { capture: true, passive: false });
   }
   
@@ -701,7 +700,6 @@ class ClassicTetris {
     document.removeEventListener('pointermove', this._handlePointerMove, true);
     document.removeEventListener('pointerup', this._handlePointerUp, true);
     document.removeEventListener('pointercancel', this._handlePointerCancel, true);
-    document.removeEventListener('wheel', this._handleWheel, true);
     document.removeEventListener('keydown', this._handleKeyDown, true);
   }
   
