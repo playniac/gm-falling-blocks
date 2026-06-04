@@ -907,12 +907,11 @@ class ClassicTetris {
         // left mouse button, touch contact, pen contact
         // rotate piece clockwise
         this.rotateAnticlockwise = !(this.rotateClockwise = true);
-        
+
       } else {
-        // right button, mouse wheel...
-        // rotate piece anticlockwise
-        this.rotateClockwise = !(this.rotateAnticlockwise = true);
-        
+        // right button: hard drop
+        this.hardDrop = true;
+
       }
     }
   }
